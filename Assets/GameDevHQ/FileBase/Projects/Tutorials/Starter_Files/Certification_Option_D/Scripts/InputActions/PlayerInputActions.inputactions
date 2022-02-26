@@ -46,14 +46,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Respawn",
-                    "type": "Button",
-                    "id": "e9fc2818-522c-42f7-aa43-3d5ad5854cc9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Restart",
                     "type": "Button",
                     "id": "900dc7b9-29e9-43ec-9954-a1e860fe4f2c",
@@ -153,17 +145,6 @@
                 },
                 {
                     "name": "",
-                    "id": "8c20d92f-d20e-4cc0-a48a-fb9911371d02",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Respawn",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1ba7d7c4-6cb5-4877-b2ec-03c1a0971357",
                     "path": "<Keyboard>/g",
                     "interactions": "",
@@ -176,7 +157,7 @@
                 {
                     "name": "",
                     "id": "3132e906-00ec-4080-9c73-6d57bd91207c",
-                    "path": "<Keyboard>/v",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
