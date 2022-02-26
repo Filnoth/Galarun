@@ -59,14 +59,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Respawn"",
-                    ""type"": ""Button"",
-                    ""id"": ""e9fc2818-522c-42f7-aa43-3d5ad5854cc9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Restart"",
                     ""type"": ""Button"",
                     ""id"": ""900dc7b9-29e9-43ec-9954-a1e860fe4f2c"",
@@ -166,17 +158,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8c20d92f-d20e-4cc0-a48a-fb9911371d02"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Respawn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""1ba7d7c4-6cb5-4877-b2ec-03c1a0971357"",
                     ""path"": ""<Keyboard>/g"",
                     ""interactions"": """",
@@ -189,7 +170,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3132e906-00ec-4080-9c73-6d57bd91207c"",
-                    ""path"": ""<Keyboard>/v"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -209,7 +190,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Player_Firework = m_Player.FindAction("Firework", throwIfNotFound: true);
         m_Player_Thrusters = m_Player.FindAction("Thrusters", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
-        m_Player_Respawn = m_Player.FindAction("Respawn", throwIfNotFound: true);
         m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
     }
 
@@ -265,7 +245,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Firework;
     private readonly InputAction m_Player_Thrusters;
     private readonly InputAction m_Player_Pause;
-    private readonly InputAction m_Player_Respawn;
     private readonly InputAction m_Player_Restart;
     public struct PlayerActions
     {
@@ -276,7 +255,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @Firework => m_Wrapper.m_Player_Firework;
         public InputAction @Thrusters => m_Wrapper.m_Player_Thrusters;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
-        public InputAction @Respawn => m_Wrapper.m_Player_Respawn;
         public InputAction @Restart => m_Wrapper.m_Player_Restart;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -302,9 +280,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
-                @Respawn.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRespawn;
-                @Respawn.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRespawn;
-                @Respawn.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRespawn;
                 @Restart.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
                 @Restart.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
                 @Restart.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
@@ -327,9 +302,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
-                @Respawn.started += instance.OnRespawn;
-                @Respawn.performed += instance.OnRespawn;
-                @Respawn.canceled += instance.OnRespawn;
                 @Restart.started += instance.OnRestart;
                 @Restart.performed += instance.OnRestart;
                 @Restart.canceled += instance.OnRestart;
@@ -344,7 +316,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnFirework(InputAction.CallbackContext context);
         void OnThrusters(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
-        void OnRespawn(InputAction.CallbackContext context);
         void OnRestart(InputAction.CallbackContext context);
     }
 }
